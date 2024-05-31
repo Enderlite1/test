@@ -1,0 +1,188 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #0044cc;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+header .logo {
+    display: flex;
+    align-items: center; /* Wyśrodkowanie w pionie */
+}
+
+header .logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+header nav {
+    flex: 1; /* Aby menu zajęło dostępne miejsce */
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Wyśrodkowanie w poziomie */
+    align-items: center; /* Wyśrodkowanie w pionie */
+}
+
+header nav ul li {
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border: 2px solid transparent;
+    padding: 5px 10px;
+    transition: border-color 0.3s;
+}
+
+header nav ul li a:hover {
+    border-color: white;
+}
+
+/* Dodajemy hamburger menu dla urządzeń mobilnych */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Animacja hamburger menu */
+.hamburger.active div:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active div:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active div:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.main {
+    padding: 20px;
+}
+
+.banner {
+    margin: 20px 0;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+}
+
+.overlay h2, .overlay h3 {
+    margin: 0;
+}
+
+.news {
+    display: flex;
+    justify-content: space-between;
+}
+
+.news article {
+    width: 48%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: white;
+    position: relative;
+}
+
+.news img, .tickets img {
+    width: 100%;
+    height: auto;
+}
+
+.small-image img {
+    width: 50%;
+    height: auto;
+}
+
+footer {
+    background: #0044cc;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer .social-media img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+/* Zapytania media queries */
+@media only screen and (max-width: 768px) {
+    header .logo,
+    header nav {
+        flex: none; /* Anulowanie flexboxa dla elementów */
+    }
+
+    header .logo img {
+        margin-right: 0; /* Usunięcie marginesu po prawej stronie logo */
+    }
+
+    header nav ul {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #0044cc;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul.active {
+        display: flex;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}

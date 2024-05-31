@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klub AB - Oficjalna Strona Klubu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="#"><img src="logo.png" alt="Klub Sportowy AB"></a>
+            <h1>Klub sport</h1>
+			<nav>
+            <ul>
+                <li><a href="aktualnosci.html">Aktualności</a></li> 
+                <li><a href="klub.html">Klub</a></li> 
+                <li><a href="Oferta.html">Oferta</a></li> 
+                
+                
+                
+                
+                
+              
+                
+                <li><a href="#">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="banner">
+            <div class="carousel">
+                <div class="carousel-inner">
+                 <div class="carousel-item active">
+                        <img src="3.jpg" alt="Fans">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="5.jpg" alt="Fans 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="ss.jpg" alt="Fans 3">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="news">
+            <article>
+                <a href="historiameczy.html">
+                    <div class="overlay">
+                        <img src="2.jpg" alt="Match History">
+                        <h3>Historia rozegranych meczy</h3>
+                    </div>
+                </a>
+            </article>
+            <article>
+                <a href="zasady.html">
+                    <div class="overlay">
+                        <img src="1.jpg" alt="Tickets Info">
+                        <h3>Ważne zasady panujące w klubie</h3>
+                    </div>
+                </a>
+            </article>
+        </section>
+
+        <section class="tickets small-image">
+            <a href="oferta.html">
+                <div class="overlay">
+                    <img src="oferta.png" alt="Stadium">
+                    <h3>Skorzystaj z oferty dołączenia do klubu </h3>
+                </div>
+            </a>
+        </section>
+    </main>
+
+    
+
+    <footer>
+        <div class="social-media">
+            <a href="https://www.facebook.com/profile.php?id=61560293315267"><img src="facebook.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com/klubsportowy7/"><img src="instagram.png" alt="Instagram"></a>
+            <a href="https://x.com/KlubSportowy777"><img src="twitter.png" alt="Twitter"></a>
+            <a href="https://www.youtube.com/channel/UC8jxsPhAy-7l22qQGuLpyxg"><img src="youtube.png" alt="YouTube"></a>
+        </div>
+        <div class="contact">
+            <p>Kontakt: info@klubsportowy.pl</p>
+        </div>
+        <div class="legal">
+            <a href="#">Polityka Prywatności</a>
+            <a href="#">Warunki Użytkowania</a>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.style.display = 'block'; // Pokaż slajd
+                } else {
+                    slide.style.display = 'none'; // Ukryj slajd
+                }
+            });
+        }
+
+        // Inicjalizacja karuzeli
+        showSlide(currentSlide);
+
+        // Automatyczne przewijanie karuzeli
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }, 5000);
+    });
+    </script>
+</body>
+</html>
