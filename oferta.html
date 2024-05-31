@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferta Klubu Piłkarskiego</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        header {
+            background-color: #0044cc;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+        header img {
+            max-width: 200px;
+            margin-bottom: 10px;
+        }
+        h1 {
+            margin: 0;
+        }
+        .offer-description {
+            background-color: #fff;
+            padding: 2em;
+            margin: 2em 0;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .offer-description h2 {
+            color: #0044cc;
+            margin-top: 0;
+        }
+        .offer-description p {
+            color: #333;
+            line-height: 1.6;
+        }
+        .offer-description ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .offer-description ul li {
+            margin-bottom: 0.5em;
+            padding-left: 1.5em;
+            position: relative;
+        }
+        .offer-description ul li:before {
+            content: "\2022";
+            color: #0044cc;
+            position: absolute;
+            left: 0;
+        }
+        form {
+            background-color: #fff;
+            padding: 2em;
+            margin: 2em 0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 1em;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.5em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group button {
+            padding: 0.7em 1.5em;
+            background-color: #0044cc;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #003399;
+        }
+        .error {
+            color: red;
+            margin-top: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="test.html"><img src="logo.png" alt="Logo Klubu Piłkarskiego"></a>
+        <h1>Oferta Klubu Piłkarskiego</h1>
+    </header>
+    <div class="container">
+        <div class="offer-description">
+            <h2>Zajęcia Piłkarskie</h2>
+            <p>Zapraszamy do naszego klubu piłkarskiego, gdzie oferujemy nie tylko treningi, ale także możliwość uczestnictwa w meczach i turniejach. Nasza oferta obejmuje:</p>
+            <ul>
+                <li>Indywidualne treningi techniczne</li>
+                <li>Ćwiczenia fizyczne dostosowane do wieku i poziomu umiejętności</li>
+                <li>Udział w ligach i turniejach</li>
+                <li>Rozwój umiejętności pod okiem doświadczonych trenerów</li>
+            </ul>
+        </div>
+        <form id="signup-form">
+            <h2>Zapisz się na zajęcia</h2>
+            <div class="form-group">
+                <label for="name">Imię i nazwisko</label>
+                <input type="text" id="name" name="name" required>
+                <div id="name-error" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <div id="email-error" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="phone">Telefon</label>
+                <input type="tel" id="phone" name="phone" required pattern="[0-9]{9}">
+                <div id="phone-error" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="activity">Wybierz zajęcia</label>
+                <select id="activity" name="activity" required>
+                    <option value="">Wybierz...</option>
+                    <option value="trening">Trening</option>
+                    <option value="liga">Udział w lidze</option>
+                    <option value="turniej">Udział w turnieju</option>
+                </select>
+                <div id="activity-error" class="error"></div>
+            </div>
+            <div class="form-group">
+                <button type="submit">Zapisz się</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            let isValid = true;
+
+            // Validate name
+            const name = document.getElementById('name').value;
+            const nameError = document.getElementById('name-error');
+            if (name.trim() === '') {
+                nameError.textContent = 'Imię i nazwisko jest wymagane';
+                isValid = false;
+            } else {
+                nameError.textContent = '';
+            }
+
+            // Validate email
+            const email = document.getElementById('email').value;
+            const emailError = document.getElementById('email-error');
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailPattern.test(email)) {
+                emailError.textContent = 'Wprowadź prawidłowy email';
+                isValid = false;
+            } else {
+                emailError.textContent = '';
+            }
+
+            // Validate phone
+            const phone = document.getElementById('phone').value;
+            const phoneError = document.getElementById('phone-error');
+            const phonePattern = /^[0-9

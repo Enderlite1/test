@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia Rozegranych Meczów</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0044cc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #ffffff;
+        }
+        .container {
+            background-color: #ffffff;
+            color: #0044cc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 900px;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap; /* New */
+        }
+        h1 {
+            color: #0044cc;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #0044cc;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #0044cc;
+            color: #ffffff;
+        }
+        .logo {
+            max-width: 100px;
+            margin-bottom: 20px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #0044cc;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .back-link:hover {
+            background-color: #003399;
+        }
+        .upcoming-matches {
+            margin-left: 20px;
+            padding-left: 20px;
+            border-left: 2px solid #0044cc;
+        }
+        .upcoming-matches h2 {
+            color: #0044cc;
+        }
+        .upcoming-matches ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .upcoming-matches li {
+            margin-bottom: 10px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        /* New CSS for Mobile Menu */
+        .menu-toggle {
+            display: none;
+            order: -1; /* Change the order on mobile */
+        }
+        .menu {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+        }
+        .menu ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu li {
+            margin-left: 20px;
+        }
+        .menu li:first-child {
+            margin-left: 0;
+        }
+        .menu a {
+            color: #0044cc;
+            text-decoration: none;
+        }
+        .menu-toggle {
+            display: block;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .menu {
+                order: -1; /* Change the order on mobile */
+            }
+            .menu {
+                display: none;
+                width: 100%;
+            }
+            .menu.open {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <img src="logo.png" alt="Logo Klubu" class="logo">
+            <h1>Historia Rozegranych Meczów</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Drużyna A</th>
+                        <th>Drużyna B</th>
+                        <th>Wynik</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024-05-01</td>
+                        <td>Klub A</td>
+                        <td>Klub B</td>
+                        <td>2-1</td>
+                    </tr>
+                    <tr>
+                        <td>2024-05-15</td>
+                        <td>Klub C</td>
+                        <td>Klub D</td>
+                        <td>0-0</td>
+                    </tr>
+                    <tr>
+                        <td>2024-06-01</td>
+                        <td>Klub E</td>
+                        <td>Klub F</td>
+                        <td>1-3</td>
+                    </tr>
+                    <tr>
+                        <td>2024-06-10</td>
+                        <td>Klub G</td>
+                        <td>Klub H</td>
+                        <td>4-2</td>
+                    </tr>
+                    <tr>
+                        <td>2024-06-20</td>
+                        <td>Klub I</td>
+                        <td>Klub J</td>
+                        <td>2-2</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="test.html" class="back-link">Powrót</a>
+        </div>
+        <div class="upcoming-matches">
+            <h2>Zbliżające się mecze</h2>
+            <ul>
+                <li>2024-07-01: Klub K vs Klub L</li>
+                <li>2024-07-10: Klub M vs Klub N</li>
+                <li>2024-07-15: Klub O vs Klub P</li>
+                <li>2024-07-20: Klub Q vs Klub R</li>
+                <li>2024-07-25: Klub S vs Klub T</li>
+            </ul>
+        </div>
+    </div>
+    
+

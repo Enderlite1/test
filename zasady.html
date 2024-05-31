@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zasady w Klubie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0044cc;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+        }
+
+        header {
+            background-color: #0044cc;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            max-width: 100px;
+            margin-bottom: 20px;
+        }
+
+        header nav {
+            display: none; /* Usunięto zbędne style */
+        }
+
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header nav ul li {
+            margin: 0 10px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            border: 2px solid transparent;
+            padding: 5px 10px;
+            transition: border-color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            border-color: white;
+        }
+
+        .container {
+            background-color: #ffffff;
+            color: #0044cc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            margin: auto;
+        }
+
+        h1 {
+            color: #0044cc;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        li::before {
+            content: "✔";
+            color: #0044cc;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #0044cc;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .back-link:hover {
+            background-color: #003399;
+        }
+
+        /* Responsywność */
+        @media only screen and (max-width: 768px) {
+            .container {
+                padding: 20px 10px;
+            }
+
+            header .logo {
+                max-width: 80px;
+                margin-bottom: 10px;
+            }
+
+            header nav ul {
+                /* Niepotrzebne style dla małych ekranów */
+            }
+
+            header nav ul.active {
+                /* Niepotrzebne style dla małych ekranów */
+            }
+
+            header nav ul li {
+                margin: 10px 0;
+            }
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #ffffff;
+            margin: 3px 0;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Media Query dla Hamburger Menu */
+        @media only screen and (max-width: 768px) {
+            .hamburger {
+                display: flex;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                flex-direction: column;
+                cursor: pointer;
+            }
+
+            .header.active .hamburger div:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .header.active .hamburger div:nth-child(2) {
+                opacity: 0;
+            }
+
+            .header.active .hamburger div:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo Klubu" class="logo">
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Zasady w Klubie</h1>
+        <ul>
+            <li>Szanuj innych członków klubu.</li>
+            <li>Utrzymuj porządek i czystość w klubie.</li>
+            <li>Przestrzegaj godzin otwarcia klubu.</li>
+            <li>Nie używaj wulgaryzmów i nie prowokuj kłótni.</li>
+            <li>Dbaj o sprzęt i wyposażenie klubu.</li>
+            <li>Nie spożywaj alkoholu ani innych używek na terenie klubu.</li>
+            <li>Zachowuj się odpowiedzialnie podczas wydarzeń klubowych.</li>
+            <li>Uczestnicz aktywnie w spotkaniach i wydarzeniach organizowanych przez klub.</li>
+            <li>Informuj zarząd klubu o wszelkich problemach lub sugestiach.</li>
+            <li>Bądź zawsze pozytywnie nastawiony i wspieraj innych członków klubu.</li>
+        </ul>
+        <a href="test.html" class="back-link">Powrót</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburger = document.querySelector('.hamburger');
+            const header = document.querySelector('header');
+            hamburger.addEventListener('click', function () {
+                header.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
+

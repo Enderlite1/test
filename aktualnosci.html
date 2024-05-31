@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aktualności</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0044cc;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            background-color: #ffffff;
+            color: #0044cc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 1200px;
+            width: 90%;
+        }
+        h1 {
+            text-align: center;
+            color: #0044cc;
+        }
+        .topic {
+            margin-bottom: 30px;
+        }
+        .topic h2 {
+            color: #0044cc;
+        }
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 100%;
+        }
+        .carousel img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1;
+        }
+        .carousel-button.prev {
+            left: 10px;
+        }
+        .carousel-button.next {
+            right: 10px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #0044cc;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .back-link:hover {
+            background-color: #003399;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Aktualności</h1>
+
+        <!-- Topic 1 -->
+        <div class="topic">
+            <h2>Sprzeczka na boisku sędzia reaguje</h2>
+            <div class="carousel" id="carousel1">
+                <button class="carousel-button prev" onclick="prevSlide('carousel1')">&#10094;</button>
+                <div class="carousel-inner">
+                    <a href="w1.html"><img src="w1.jpg" alt="Wydarzenie 1 - Zdjęcie 1"></a>
+                    <a href="w1.html"><img src="w4.jpg" alt="Wydarzenie 1 - Zdjęcie 2"></a>
+                    <a href="w1.html"><img src="w3.jpg" alt="Wydarzenie 1 - Zdjęcie 3"></a>
+                </div>
+                <button class="carousel-button next" onclick="nextSlide('carousel1')">&#10095;</button>
+            </div>
+        </div>
+
+        <!-- Topic 2 -->
+        <div class="topic">
+            <h2>Pogawędka z naszymi trenerami</h2>
+            <div class="carousel" id="carousel2">
+                <button class="carousel-button prev" onclick="prevSlide('carousel2')">&#10094;</button>
+                <div class="carousel-inner">
+                    <a href="w2.html"><img src="w5.jpg" alt="Wydarzenie 2 - Zdjęcie 1"></a>
+                    <a href="w2.html"><img src="w6.jpg" alt="Wydarzenie 2 - Zdjęcie 2"></a>
+                    <a href="w2.html"><img src="w7.jpg" alt="Wydarzenie 2 - Zdjęcie 3"></a>
+                </div>
+                <button class="carousel-button next" onclick="nextSlide('carousel2')">&#10095;</button>
+            </div>
+        </div>
+
+        <!-- Topic 3 -->
+        <div class="topic">
+            <h2>Spotkanie z nowymi zawodnikami klubu</h2>
+            <div class="carousel" id="carousel3">
+                <button class="carousel-button prev" onclick="prevSlide('carousel3')">&#10094;</button>
+                <div class="carousel-inner">
+                    <a href="w3.html"><img src="z1.jpg" alt="Wydarzenie 3 - Zdjęcie 1"></a>
+                    <a href="w3.html"><img src="z2.jpg" alt="Wydarzenie 3 - Zdjęcie 2"></a>
+                    <a href="w3.html"><img src="z3.jpg" alt="Wydarzenie 3 - Zdjęcie 3"></a>
+                </div>
+                <button class="carousel-button next" onclick="nextSlide('carousel3')">&#10095;</button>
+            </div>
+        </div>
+
+        <!-- Topic 4 -->
+        <div class="topic">
+            <h2>Warsztaty motywacyjne z psychologiem sportowym</h2>
+            <div class="carousel" id="carousel4">
+                <button class="carousel-button prev" onclick="prevSlide('carousel4')">&#10094;</button>
+                <div class="carousel-inner">
+                    <a href="w4.html"><img src="p1.jpg" alt="Wydarzenie 4 - Zdjęcie 1"></a>
+                    <a href="w4.html"><img src="p2.jpg" alt="Wydarzenie 4 - Zdjęcie 2"></a>
+                    <a href="w4.html"><img src="p3.jpg" alt="Wydarzenie 4 - Zdjęcie 3"></a>
+                </div>
+                <button class="carousel-button next" onclick="nextSlide('carousel4')">&#10095;</button>
+            </div>
+        </div>
+
+        <a href="test.html" class="back-link">Powrót</a> 
+    </div>
+
+    <script>
+        function nextSlide(id) {
+            const carousel = document.getElementById(id);
+            const inner = carousel.querySelector('.carousel-inner');
+            inner.appendChild(inner.firstElementChild);
+        }
+
+        function prevSlide(id) {
+            const carousel = document.getElementById(id);
+            const inner = carousel.querySelector('.carousel-inner');
+            inner.insertBefore(inner.lastElementChild, inner.firstElementChild);
+        }
+    </script>
+</body>
+</html>
