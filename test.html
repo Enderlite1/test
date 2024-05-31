@@ -11,19 +11,18 @@
         <div class="logo">
             <a href="#"><img src="logo.png" alt="Klub Sportowy AB"></a>
             <h1>Klub sport</h1>
-			<nav>
-            <ul>
-                <li><a href="aktualnosci.html">Aktualności</a></li> 
-                <li><a href="klub.html">Klub</a></li> 
-                <li><a href="oferta.html">Oferta</a></li> 
-                
-                
-                
-                
-                
-              
-                
-                <li><a href="kontakt.html">Kontakt</a></li>
+        </div>
+        <nav>
+            <div class="hamburger" id="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul id="nav-list">
+                <li><a href="aktualnosci.html">Aktualności</a></li>
+                <li><a href="klub.html">Klub</a></li>
+                <li><a href="Oferta.html">Oferta</a></li>
+                <li><a href="#">Kontakt</a></li>
             </ul>
         </nav>
     </header>
@@ -32,7 +31,7 @@
         <section class="banner">
             <div class="carousel">
                 <div class="carousel-inner">
-                 <div class="carousel-item active">
+                    <div class="carousel-item active">
                         <img src="3.jpg" alt="Fans">
                     </div>
                     <div class="carousel-item">
@@ -74,8 +73,6 @@
         </section>
     </main>
 
-    
-
     <footer>
         <div class="social-media">
             <a href="https://www.facebook.com/profile.php?id=61560293315267"><img src="facebook.png" alt="Facebook"></a>
@@ -93,30 +90,33 @@
     </footer>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-item');
-        const totalSlides = slides.length;
+        document.addEventListener('DOMContentLoaded', function () {
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.carousel-item');
+            const totalSlides = slides.length;
 
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                if (i === index) {
-                    slide.style.display = 'block'; // Pokaż slajd
-                } else {
-                    slide.style.display = 'none'; // Ukryj slajd
-                }
-            });
-        }
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.style.display = (i === index) ? 'block' : 'none';
+                });
+            }
 
-        // Inicjalizacja karuzeli
-        showSlide(currentSlide);
-
-        // Automatyczne przewijanie karuzeli
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % totalSlides;
             showSlide(currentSlide);
-        }, 5000);
-    });
+
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                showSlide(currentSlide);
+            }, 5000);
+
+            const hamburger = document.getElementById('hamburger');
+            const navList = document.getElementById('nav-list');
+
+            hamburger.addEventListener('click', function () {
+                navList.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            });
+        });
     </script>
 </body>
 </html>
+
