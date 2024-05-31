@@ -14,7 +14,7 @@ header {
 
 header .logo {
     display: flex;
-    align-items: center; /* Wyśrodkowanie w pionie */
+    align-items: center;
 }
 
 header .logo img {
@@ -23,7 +23,9 @@ header .logo img {
 }
 
 header nav {
-    flex: 1; /* Aby menu zajęło dostępne miejsce */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header nav ul {
@@ -31,8 +33,8 @@ header nav ul {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center; /* Wyśrodkowanie w poziomie */
-    align-items: center; /* Wyśrodkowanie w pionie */
+    justify-content: center;
+    align-items: center;
 }
 
 header nav ul li {
@@ -52,7 +54,6 @@ header nav ul li a:hover {
     border-color: white;
 }
 
-/* Dodajemy hamburger menu dla urządzeń mobilnych */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -67,7 +68,6 @@ header nav ul li a:hover {
     transition: transform 0.3s ease-in-out;
 }
 
-/* Animacja hamburger menu */
 .hamburger.active div:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
@@ -152,15 +152,14 @@ footer .social-media img {
     margin: 0 10px;
 }
 
-/* Zapytania media queries */
 @media only screen and (max-width: 768px) {
     header .logo,
     header nav {
-        flex: none; /* Anulowanie flexboxa dla elementów */
+        flex: none;
     }
 
     header .logo img {
-        margin-right: 0; /* Usunięcie marginesu po prawej stronie logo */
+        margin-right: 0;
     }
 
     header nav ul {
