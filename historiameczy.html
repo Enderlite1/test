@@ -10,10 +10,6 @@
             background-color: #0044cc;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             color: #ffffff;
         }
         .container {
@@ -22,15 +18,15 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             padding: 20px;
-            max-width: 900px;
-            width: 100%;
+            max-width: 800px;
+            width: 90%;
+            margin: 0 auto;
+            box-sizing: border-box;
             text-align: center;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap; /* New */
         }
         h1 {
             color: #0044cc;
+            margin-top: 0;
         }
         table {
             width: 100%;
@@ -64,43 +60,42 @@
             background-color: #003399;
         }
         .upcoming-matches {
-            margin-left: 20px;
-            padding-left: 20px;
-            border-left: 2px solid #0044cc;
+            margin-top: 20px;
         }
         .upcoming-matches h2 {
             color: #0044cc;
+            margin-top: 0;
         }
         .upcoming-matches ul {
             list-style-type: none;
             padding: 0;
+            margin: 0;
+            text-align: left;
         }
         .upcoming-matches li {
             margin-bottom: 10px;
-            font-size: 18px;
+            font-size: 16px;
             line-height: 1.5;
         }
         /* New CSS for Mobile Menu */
         .menu-toggle {
             display: none;
-            order: -1; /* Change the order on mobile */
         }
         .menu {
-            display: flex;
-            justify-content: flex-end;
+            display: none;
             width: 100%;
+            margin-top: 20px;
         }
         .menu ul {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             list-style: none;
             padding: 0;
             margin: 0;
         }
         .menu li {
-            margin-left: 20px;
-        }
-        .menu li:first-child {
-            margin-left: 0;
+            margin: 0 10px;
         }
         .menu a {
             color: #0044cc;
@@ -109,73 +104,75 @@
         .menu-toggle {
             display: block;
             cursor: pointer;
+            text-align: center;
+            margin-bottom: 20px;
         }
         @media (max-width: 768px) {
             .container {
-                flex-direction: column;
+                padding: 10px;
             }
-            .menu {
-                order: -1; /* Change the order on mobile */
-            }
-            .menu {
-                display: none;
-                width: 100%;
+            .menu-toggle {
+                display: block;
             }
             .menu.open {
                 display: block;
+            }
+            .menu {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div>
-            <img src="logo.png" alt="Logo Klubu" class="logo">
-            <h1>Historia Rozegranych Meczów</h1>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Data</th>
-                        <th>Drużyna A</th>
-                        <th>Drużyna B</th>
-                        <th>Wynik</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>2024-05-01</td>
-                        <td>Klub A</td>
-                        <td>Klub B</td>
-                        <td>2-1</td>
-                    </tr>
-                    <tr>
-                        <td>2024-05-15</td>
-                        <td>Klub C</td>
-                        <td>Klub D</td>
-                        <td>0-0</td>
-                    </tr>
-                    <tr>
-                        <td>2024-06-01</td>
-                        <td>Klub E</td>
-                        <td>Klub F</td>
-                        <td>1-3</td>
-                    </tr>
-                    <tr>
-                        <td>2024-06-10</td>
-                        <td>Klub G</td>
-                        <td>Klub H</td>
-                        <td>4-2</td>
-                    </tr>
-                    <tr>
-                        <td>2024-06-20</td>
-                        <td>Klub I</td>
-                        <td>Klub J</td>
-                        <td>2-2</td>
-                    </tr>
-                </tbody>
-            </table>
-            <a href="test.html" class="back-link">Powrót</a>
-        </div>
+        <img src="logo.png" alt="Logo Klubu" class="logo">
+        <h1>Historia Rozegranych Meczów</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Drużyna A</th>
+                    <th>Drużyna B</th>
+                    <th>Wynik</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2024-05-01</td>
+                    <td>Klub A</td>
+                    <td>Klub B</td>
+                    <td>2-1</td>
+                </tr>
+                <tr>
+                    <td>2024-05-15</td>
+                    <td>Klub C</td>
+                    <td>Klub D</td>
+                    <td>0-0</td>
+                </tr>
+                <tr>
+                    <td>2024-06-01</td>
+                    <td>Klub E</td>
+                    <td>Klub F</td>
+                    <td>1-3</td>
+                </tr>
+                <tr>
+                    <td>2024-06-10</td>
+                    <td>Klub G</td>
+                    <td>Klub H</td>
+                    <td>4-2</td>
+                </tr>
+                <tr>
+                    <td>2024-06-20</td>
+                    <td>Klub I</td>
+                    <td>Klub J</td>
+                    <td>2-2</td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="test.html" class="back-link">Powrót</a>
         <div class="upcoming-matches">
             <h2>Zbliżające się mecze</h2>
             <ul>
@@ -187,5 +184,6 @@
             </ul>
         </div>
     </div>
-    
+</body>
+</html>
 
