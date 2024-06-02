@@ -12,12 +12,12 @@
             <a href="#"><img src="logo.png" alt="Klub Sportowy AB"></a>
             <h1>Klub sport</h1>
         </div>
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
         <nav>
-            <div class="hamburger" id="hamburger">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
             <ul id="nav-list">
                 <li><a href="aktualnosci.html">Aktualności</a></li>
                 <li><a href="klub.html">Klub</a></li>
@@ -48,7 +48,7 @@
             <article>
                 <a href="historiameczy.html">
                     <div class="overlay">
-                        <img src="2.jpg" alt="Match History">
+                        <img src="2.jpg" alt="Historia meczów">
                         <h3>Historia rozegranych meczy</h3>
                     </div>
                 </a>
@@ -56,7 +56,7 @@
             <article>
                 <a href="zasady.html">
                     <div class="overlay">
-                        <img src="1.jpg" alt="Tickets Info">
+                        <img src="1.jpg" alt="Zasady">
                         <h3>Ważne zasady panujące w klubie</h3>
                     </div>
                 </a>
@@ -66,7 +66,7 @@
         <section class="tickets small-image">
             <a href="oferta.html">
                 <div class="overlay">
-                    <img src="oferta.png" alt="Stadium">
+                    <img src="oferta.png" alt="oferta">
                     <h3>Skorzystaj z oferty dołączenia do klubu </h3>
                 </div>
             </a>
@@ -91,40 +91,35 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.carousel-item');
-    const totalSlides = slides.length;
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.carousel-item');
+            const totalSlides = slides.length;
 
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.style.display = (i === index) ? 'block' : 'none';
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.style.display = (i === index) ? 'block' : 'none';
+                });
+            }
+
+            showSlide(currentSlide);
+
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                showSlide(currentSlide);
+            }, 5000);
+
+            const hamburger = document.getElementById('hamburger');
+            const navList = document.getElementById('nav-list');
+
+            hamburger.addEventListener('click', function () {
+                navList.classList.toggle('active');
+                if (navList.classList.contains('active')) {
+                    hamburger.classList.add('active');
+                } else {
+                    hamburger.classList.remove('active');
+                }
+            });
         });
-    }
-
-    showSlide(currentSlide);
-
-    setInterval(() => {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        showSlide(currentSlide);
-    }, 5000);
-
-    const hamburger = document.getElementById('hamburger');
-    const navList = document.getElementById('nav-list');
-
-    hamburger.addEventListener('click', function () {
-        navList.classList.toggle('active');
-        hamburger.classList.toggle('active');
-    });
-
-    // Close menu on link click
-    navList.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', function () {
-            navList.classList.remove('active');
-            hamburger.classList.remove('active');
-        });
-    });
-});
-
     </script>
 </body>
 </html>
