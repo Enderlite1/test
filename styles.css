@@ -26,7 +26,7 @@ header .logo img {
 
 header nav {
     display: flex;
-    justify-content: flex-end; /* Przeniesienie menu na prawą stronę */
+    justify-content: flex-end; 
     align-items: center;
 }
 
@@ -130,7 +130,7 @@ header nav ul li a:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background: white;
     position: relative;
-    margin-bottom: 20px; /* Dodane marginesy dla lepszego wyglądu */
+    margin-bottom: 20px; 
 }
 
 .news img, .tickets img {
@@ -155,7 +155,7 @@ footer .social-media img {
     margin: 0 10px;
 }
 
-/* Responsive Styles */
+
 @media only screen and (max-width: 768px) {
     header .logo,
     header nav {
@@ -170,11 +170,11 @@ footer .social-media img {
         display: none;
         position: absolute;
         top: 60px;
-        right: 20px; /* Przeniesienie menu na prawą stronę */
+        right: 20px; 
         background-color: #0044cc;
         flex-direction: column;
         text-align: center;
-        z-index: 999; /* Ensure menu is on top */
+        z-index: 999; 
     }
 
     header nav ul.active {
@@ -189,7 +189,7 @@ footer .social-media img {
         display: flex;
     }
 
-    /* Zwiększenie odstępu pomiędzy sekcjami dla lepszego wyglądu */
+   
     .news article,
     .tickets {
         width: 100%;
